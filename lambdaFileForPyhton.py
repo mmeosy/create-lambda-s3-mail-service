@@ -1,34 +1,3 @@
-protocol
-
-
-# create-lambda-s3-mail-service
-
-We created a lambda service which send us an E-Mail, if we upload a file in s3.
-
-- open sandbox
-- create s3-Bucket
-- -create a AWS-SNS Topic
-  - subscripe 
-    - select -Email and Write your E-Mail adress
-    - confirm your E-Mail adress(confirm the subscription)
-    - notice your arn (example [arn:aws:sns:us-west-2:643322559948:mytopic])
-- create  in AWS Lambda a Lambda Function
-  - Function name:"give your function name"
-  - Runtime : Select Python 3.9
-  - Permissions
-    - Change default execition role
-    - click "Use an existing Role"
-    - select LambdaAccesRole
-  - click "create function"
-
-
-- select your Lambda Function
-  - Add trigger
-  - select s3
-- create a new event
-  - in event template, select "S3 Put"
-- And Write your Code, 
-
 ```
 import json
 import boto3
